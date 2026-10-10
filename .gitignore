@@ -1,0 +1,14 @@
+# Secret-bearing environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Agent runtime files
+.kilo
+
+# Agent working state (supporting, non-durable)
+task.md
+
+# Local editor / OS state
+.vscode
