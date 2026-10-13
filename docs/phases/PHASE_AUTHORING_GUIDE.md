@@ -88,11 +88,19 @@ Step можно передать implementer-у, только если из не
 - consumer migration, cleanup создаваемой правкой и explicit non-goals;
 - binary acceptance scenarios и минимальный falsifying gate.
 
-Если применимый пункт неизвестен и выбор меняет ownership, schema, API,
-security, failure semantics или scope, создаётся time-boxed discovery step с
-decision/evidence outcome. Implementer не получает разрешения выбрать вариант
-во время написания кода. Phase не попадает в roadmap, пока все implementation
-steps не прошли этот gate.
+При подготовке phase, если применимый пункт неизвестен и выбор меняет ownership, schema, API,
+security, failure semantics или scope, до создания active phase выполняется
+отдельная time-boxed discovery-задача с decision/evidence outcome. Она не требует
+готовых implementation steps: queued outcome → discovery → decision/evidence →
+готовые implementation steps → active phase. В roadmap остаются outcome и ссылка;
+исследовательские заметки — temporary context, подтверждённое durable решение —
+в existing owner с явным current/target статусом. Если решение не получено,
+outcome остаётся queued с blocker; зависимая реализация не начинается.
+
+Implementer не получает разрешения выбрать существенный неизвестный вариант
+во время написания кода. Phase попадает в Active phases только после readiness
+всех implementation steps. Если discovery сам удовлетворяет критериям создания
+отдельной фазы, применяются обычные правила; новый lifecycle для него не нужен.
 
 Active steps удаляются при closure, поэтому текст хранит unique target contract, а не tutorial,
 journal или повтор owner text.

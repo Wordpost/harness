@@ -15,7 +15,8 @@
 `[INSERT_QUEUED_OUTCOMES_OR_NONE]`
 
 Queued outcome ещё не является готовым phase contract. Перенос в Active phases
-выполняется после readiness gate из authoring guide.
+выполняется после readiness gate из authoring guide. Неизвестные существенные
+решения разрешаются до этого перехода через [pre-phase discovery](./PHASE_AUTHORING_GUIDE.md#implementation-readiness-gate).
 
 Рекомендуемое отображение: `⬜ planned` · `🔄 in_progress` · `⛔ blocked` · `queued`.
 
